@@ -33,16 +33,7 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
         )
         await update.message.reply_text(response.text)
     except Exception as e:
-        await update.message.reply_text("Sorry, an error occurred while processing your request.")
+        # Langsung tampilkan isi pesan error aslinya ke chat Telegram
+        await update.message.reply_text(f"Error detail: {str(e)}")
         print(f"Error: {e}")
-
-if __name__ == '__main__':
-    # Jalankan HTTP Server di background thread
-    Thread(target=run_web_server, daemon=True).start()
-    
-    # Jalankan Bot Telegram
-    app = ApplicationBuilder().token(TELEGRAM_TOKEN).build()
-    app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_message))
-    print("Telegram AI Agent is running...")
-    app.run_polling()
-    
+        
