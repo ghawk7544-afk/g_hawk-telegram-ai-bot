@@ -19,7 +19,7 @@ def run_web_server():
 
 # Credential kamu
 TELEGRAM_TOKEN = "8825784666:AAHX82H0P8JnsrvVj3KGi0s1kkU3re0W_ek"
-GEMINI_API_KEY = "AQ.Ab8RN6Izmg2YeYGAqblPbfCd2u5pGHz-2VRuEiR1KVWT_pVAZg"
+GEMINI_API_KEY = "AQ.Ab8RN6L38n3NMf9ma__RpXLQ7cXYBhkc0FejtT8jqD28tBhBXA"
 
 client = genai.Client(api_key=GEMINI_API_KEY)
 SYSTEM_PROMPT = "You are a helpful AI assistant. Always respond in English."
